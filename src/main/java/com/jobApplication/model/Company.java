@@ -28,7 +28,7 @@ public class Company {
 	@JsonIgnore
 	List<Job> jobs = new ArrayList<>();
 
-	@OneToMany(mappedBy = "company")
+	@OneToMany(mappedBy = "company",fetch = FetchType.LAZY)
 	List<Review> reviews = new ArrayList<>();
 
 	public Company() {

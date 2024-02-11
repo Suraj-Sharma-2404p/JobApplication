@@ -1,18 +1,15 @@
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/jobapplication
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    database: POSTGRESQL
+    show-sql: true
     hibernate:
       ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-       format_sql: true
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/jobapplication
+    username: root
+    password: root
+    driverClassName: org.postgresql.Driver
 management:
   endpoints:
     web:
