@@ -42,6 +42,8 @@ public class JobServiceImpl implements JobService {
 
 	@Override
 	public Job saveJob(Job job) {
+		Company company = companyRepo.findById(job.getCompany().getId()).get();
+		job.setCompany(company);
 		return jobRepository.save(job);
 	}
 
